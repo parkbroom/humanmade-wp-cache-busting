@@ -9,10 +9,10 @@ License: GPLv2 or later
 
 defined( 'ABSPATH' ) || exit;
 
-add_filter( 'style_loader_src', 'remove_ver_css_js', PHP_INT_MAX - 1 );
-add_filter( 'script_loader_src', 'remove_ver_css_js', PHP_INT_MAX - 1 );
+add_filter( 'style_loader_src', 'pb_remove_ver_css_js', PHP_INT_MAX - 1 );
+add_filter( 'script_loader_src', 'pb_remove_ver_css_js', PHP_INT_MAX - 1 );
 
-function remove_ver_css_js( $src ) {
+function pb_remove_ver_css_js( $src ) {
     if ( ! $src ) return;
 
     if ( strpos( $src, 'ver=' ) ) {
